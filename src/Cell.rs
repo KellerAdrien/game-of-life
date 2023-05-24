@@ -7,25 +7,33 @@
  * Copyright (c) 2023 Your Company
  */
 
-// Max width and height will match a u8 use for now
 pub struct Cell {
     state: bool,
-    posX: u8,
-    posY: u8,
+    pos_x: u16,
+    pos_y: u16,
     neighborScore : u8,
 }
 
 impl Cell {
-    fn update() {
+    pub fn new() -> Cell{
+        Cell {
+            state: false,
+            pos_x: 0,
+            pos_y: 0,
+            neighborScore : 0,
+        }
+    }
+
+    pub fn update() {
         unimplemented!("Update cell state");
     }
 
     //WARN: Is it actually useful ?
-    fn get_state() -> bool {
+    pub fn get_state() -> bool {
         unimplemented!("Returns cell state");
     }
 
-    fn set_score(score: u8) {
+    pub fn set_score(score: u8) {
         unimplemented!("Sets cell score");
     }
 

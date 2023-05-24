@@ -8,21 +8,29 @@
  */
 
 
-// Max width and height will match a u8 use for now
 pub struct World {
-    world_height: u8,
-    world_width: u8,
+    world_height: u16,
+    world_width: u16,
     map : Vec<u16>,
 }
 
 impl World {
-    fn create_cell() {
-        unimplemented!("Update cells state");
+
+    pub fn new(grid_size: u16) -> World {
+        World {
+            world_height : grid_size,
+            world_width : grid_size,
+            map : Vec::with_capacity((grid_size * grid_size).into()),
+        }
     }
-    fn compute_alive_neighbors() -> int {
+
+    pub fn create_grid() {
+        unimplemented!("Creates grid");
+    }
+    pub fn compute_alive_neighbors() -> u16 {
         unimplemented!("Computes number of alive neighbors and returns it to main function");
     }
-    fn compute_world() {
+    pub fn compute_world() {
         unimplemented!("Contains the two computing loops to update cells and update screen");
 
         /*
