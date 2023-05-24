@@ -6,8 +6,8 @@
  * 
  */
 
- use druid::widget::{Align, Flex, Label, TextBox};
- use druid::{AppLauncher, Data, Env, Lens, LocalizedString, Widget, WindowDesc, WidgetExt};
+use druid::widget::{Align, Flex, Label, TextBox};
+use druid::{AppLauncher, Data, Env, Lens, LocalizedString, Widget, WindowDesc, WidgetExt};
  
  const VERTICAL_WIDGET_SPACING: f64 = 20.0;
  const TEXT_BOX_WIDTH: f64 = 200.0;
@@ -33,6 +33,10 @@
      AppLauncher::with_window(main_window)
          .launch(initial_state)
          .expect("Failed to launch application");
+ }
+
+ fn draw_grid(dimensions : u8) {
+
  }
  
  fn build_root_widget() -> impl Widget<HelloState> {
