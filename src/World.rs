@@ -7,11 +7,12 @@
  * Copyright (c) 2023 Your Company
  */
 
+use crate::cell::Cell;
 
 pub struct World {
     world_height: u16,
     world_width: u16,
-    map : Vec<u16>,
+    map : Vec<Cell>,
 }
 
 impl World {
@@ -24,8 +25,25 @@ impl World {
         }
     }
 
-    pub fn create_grid() {
-        unimplemented!("Creates grid");
+    pub fn new_with_height_and_width(grid_height: u16, grid_width: u16) -> World {
+        World {
+            world_height : grid_height,
+            world_width : grid_width,
+            map : Vec::with_capacity((grid_height * grid_width).into()),
+        }
+    }
+
+    pub fn map(&self) -> &Vec<Cell> {
+        &self.map
+    }
+
+    pub fn create_grid(&mut self) {
+        for width in 0..self.world_width{
+        for height in 0..self.world_height {
+                self.map.push(Cell::new(height, width));
+            }
+
+        }
     }
     pub fn compute_alive_neighbors() -> u16 {
         unimplemented!("Computes number of alive neighbors and returns it to main function");

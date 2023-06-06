@@ -34,12 +34,14 @@ fn main() {
         name: "World".into(),
     };
     
+    let mut world = World::new(GRID_SIZE);
+    world.create_grid();
+    println!("{:?}", world.map());
+
     // start the application
     AppLauncher::with_window(main_window)
     .launch(initial_state)
     .expect("Failed to launch application");
-
-    let world = World::new(GRID_SIZE);
 }
 
 fn build_grid() -> impl Widget<HelloState> {
@@ -49,7 +51,7 @@ fn build_grid() -> impl Widget<HelloState> {
         let mut row = Flex::row();
         for _ in 0..GRID_SIZE as u16 {
             row.add_child(
-                Label::new("").padding(5.0)
+                Label::new("o").padding(1.0)
                 .border(druid::Color::BLACK, 1.0)
                 .fix_size(GRID_SIZE as f64, GRID_SIZE as f64)
             );
@@ -60,6 +62,9 @@ fn build_grid() -> impl Widget<HelloState> {
     grid
 }
 
+fn update_grid() {
+    
+}
 
 // fn build_root_widget() -> impl Widget<HelloState> {
 //     // a label that will determine its text based on the current app data.

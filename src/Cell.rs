@@ -7,20 +7,22 @@
  * Copyright (c) 2023 Your Company
  */
 
+
+#[derive(Debug)]
 pub struct Cell {
     state: bool,
     pos_x: u16,
     pos_y: u16,
-    neighborScore : u8,
+    neighbor_score : u8,
 }
 
 impl Cell {
-    pub fn new() -> Cell{
+    pub fn new(x: u16, y: u16) -> Cell{
         Cell {
             state: false,
-            pos_x: 0,
-            pos_y: 0,
-            neighborScore : 0,
+            pos_x: x,
+            pos_y: y,
+            neighbor_score : 0,
         }
     }
 
@@ -28,7 +30,6 @@ impl Cell {
         unimplemented!("Update cell state");
     }
 
-    //WARN: Is it actually useful ?
     pub fn get_state() -> bool {
         unimplemented!("Returns cell state");
     }
